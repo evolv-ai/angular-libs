@@ -16,7 +16,6 @@ import { OrderItemComponent } from './components/order-item/order-item.component
 import { FrameComponent } from './components/frame/frame.component';
 import { FunnelComponent } from './components/funnel/funnel.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { EvolvDirective } from './directives/evolv.directive';
 import { EvolvResolver, ExecutionPlanModule } from "execution-plan";
 
 
@@ -43,8 +42,7 @@ const MaterialModules = [
 		ProductTileComponent,
 		OrderItemComponent,
 		FrameComponent,
-		FunnelComponent,
-		EvolvDirective
+		FunnelComponent
 	],
   imports: [
     BrowserModule,
