@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import {EvolvDirective} from "./directives/evolv.directive";
+import {ExecutionPlanDirective} from "./directives/execution-plan.directive";
 
 
 
 @NgModule({
   declarations: [
-    EvolvDirective
+    ExecutionPlanDirective
   ],
   imports: [
   ],
   exports: [
-    EvolvDirective
+    ExecutionPlanDirective
   ]
 })
 export class ExecutionPlanModule { }

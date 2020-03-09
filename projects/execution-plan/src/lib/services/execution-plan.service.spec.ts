@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EvolvService } from './evolv.service';
+import { ExecutionPlanService } from './execution-plan.service';
 
 describe('ExecutionPlanService', () => {
-  let service: EvolvService;
+  let service: ExecutionPlanService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EvolvService);
+    service = TestBed.inject(ExecutionPlanService);
   });
 
   it('should be created', () => {

@@ -5,7 +5,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 @Injectable({
   providedIn: 'root'
 })
-export class EvolvResolver implements Resolve<any> {
+export class ExecutionPlanResolver implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<any> {
     const evolv = (window as any).evolv;
     return (!evolv)

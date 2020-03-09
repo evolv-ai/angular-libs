@@ -1,14 +1,14 @@
 import { AfterViewInit, Directive } from '@angular/core';
-import {EvolvService} from "../services/evolv.service";
+import {ExecutionPlanService} from "../services/execution-plan.service";
 
 
 @Directive({
   selector: '[evolvRun]'
 })
-export class EvolvDirective implements AfterViewInit {
+export class ExecutionPlanDirective implements AfterViewInit {
   private runtime: Promise<any>;
 
-  constructor(private evolv: EvolvService) {
+  constructor(private evolv: ExecutionPlanService) {
     this.runtime = this.evolv.getRuntime();
   }
 

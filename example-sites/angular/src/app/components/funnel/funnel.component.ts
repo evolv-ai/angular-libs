@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EvolvService } from "@evolv-ai/angular-execution-plan";
+import { ExecutionPlanService } from "@evolv-ai/angular-execution-plan";
 
 
 @Component({
@@ -10,7 +10,7 @@ import { EvolvService } from "@evolv-ai/angular-execution-plan";
 export class FunnelComponent implements OnInit {
 	private runtime: any;
 
-	constructor(evolv: EvolvService) {
+	constructor(evolv: ExecutionPlanService) {
 		this.runtime = evolv.getRuntime();
 	}
 
