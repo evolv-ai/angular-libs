@@ -5,8 +5,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FunnelComponent } from './components/funnel/funnel.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { FrameComponent } from './components/frame/frame.component';
-import { EvolvResolver, ProductsResolver } from './services';
-
+import { ProductsResolver } from './services';
+import { EvolvResolver } from 'execution-plan';
 
 const routes: Routes = [
 	{

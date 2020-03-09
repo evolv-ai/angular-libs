@@ -17,6 +17,7 @@ import { FrameComponent } from './components/frame/frame.component';
 import { FunnelComponent } from './components/funnel/funnel.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { EvolvDirective } from './directives/evolv.directive';
+import { EvolvResolver, ExecutionPlanModule } from "execution-plan";
 
 
 const MaterialModules = [
@@ -45,18 +46,20 @@ const MaterialModules = [
 		FunnelComponent,
 		EvolvDirective
 	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
-		HttpClientModule,
-		...MaterialModules
-	],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ...MaterialModules,
+    ExecutionPlanModule
+  ],
 	providers: [
 		{
 			provide: 'evolv',
 			useValue: (window as any).evolv
-		}
+		},
+    EvolvResolver
 	],
 	bootstrap: [AppComponent],
 	entryComponents: [
