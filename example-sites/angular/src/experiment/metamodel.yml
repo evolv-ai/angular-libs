@@ -1,0 +1,20 @@
+_name: "Angular SPA"
+ascend:
+  pages:
+    products:
+      _values:
+        - type: noop
+        - type: style
+          selector: "mat-card dt"
+          property: "color"
+          value: "green"
+          important: true
+
+    checkout:
+      _values:
+        - type: noop
+        - type: style
+          selector: "h6"
+          property: "color"
+          value: "red"
+          important: true

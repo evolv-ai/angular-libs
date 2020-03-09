@@ -1,0 +1,78 @@
+@import 'node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$evolv-blue: (
+	50: #e6e8ea,
+	100: #c1c5cb,
+	200: #989fa8,
+	300: #6f7885,
+	400: #505b6a,
+	500: #313e50,
+	600: #2c3849,
+	700: #253040,
+	800: #1f2837,
+	900: #131b27,
+	A100: #69a1ff,
+	A200: #3682ff,
+	A400: #0362ff,
+	A700: #0057e9,
+
+	contrast: (
+		50: $dark-primary-text,
+		100: $dark-primary-text,
+		200: $dark-primary-text,
+		300: $dark-primary-text,
+		400: $dark-primary-text,
+		500: $light-primary-text,
+		600: $light-primary-text,
+		700: $light-primary-text,
+		800: $light-primary-text,
+		900: $light-primary-text,
+		A100: $dark-primary-text,
+		A200: $light-primary-text,
+		A400: $light-primary-text,
+		A700: $light-primary-text,
+	)
+);
+
+$evolv-red: (
+	50: #fdebe9,
+	100: #fbcdc8,
+	200: #f8aca3,
+	300: #f58a7e,
+	400: #f37162,
+	500: #f15846,
+	600: #ef503f,
+	700: #ed4737,
+	800: #eb3d2f,
+	900: #e72d20,
+	A100: #ffffff,
+	A200: #ffeceb,
+	A400: #ffbbb8,
+	A700: #ffa39e,
+
+	contrast: (
+		50: $dark-primary-text,
+		100: $dark-primary-text,
+		200: $dark-primary-text,
+		300: $dark-primary-text,
+		400: $dark-primary-text,
+		500: $light-primary-text,
+		600: $light-primary-text,
+		700: $light-primary-text,
+		800: $light-primary-text,
+		900: $light-primary-text,
+		A100: $dark-primary-text,
+		A200: $light-primary-text,
+		A400: $light-primary-text,
+		A700: $light-primary-text,
+	)
+);
+
+$app-primary: mat-palette($evolv-blue);
+$app-accent: mat-palette($evolv-red);
+
+$app-theme: mat-light-theme($app-primary, $app-accent);
+
+@include angular-material-theme($app-theme);

@@ -1,0 +1,21 @@
+<mat-drawer-container>
+	<mat-drawer-content>
+		<div class="row">
+			<div class="col s12">
+				<mat-grid-list [cols]="rows$ | async" rowHeight="128px" gutterSize="8px">
+					<mat-grid-tile *ngFor="let product of products$ | async">
+						<app-product-tile [product]="product"></app-product-tile>
+					</mat-grid-tile>
+				</mat-grid-list>
+			</div>
+		</div>
+	</mat-drawer-content>
+	<mat-drawer mode="side" [opened]="false">
+		<div class="row">
+			<div class="col s12">
+				Cart
+			</div>
+		</div>
+	</mat-drawer>
+</mat-drawer-container>
+

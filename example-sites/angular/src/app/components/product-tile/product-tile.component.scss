@@ -1,0 +1,35 @@
+:host {
+	display: block;
+	width: 96%;
+	height: 99%;
+	margin: 8px;
+
+	::ng-deep mat-card {
+		padding: 8px;
+	}
+
+	::ng-deep mat-card-content {
+		display: grid;
+		grid-gap: 8px;
+		grid-template-rows: 100%;
+		grid-template-columns: 100px auto;
+		grid-template-areas:
+			'image details';
+
+		& > img {
+			grid-area: image;
+			width: 100px;
+			height: 100px;
+		}
+
+		& > dl {
+			grid-area: details;
+			color: black;
+
+			& > dt.product-name {
+				font-size: 1.2em;
+			}
+		}
+
+	}
+}

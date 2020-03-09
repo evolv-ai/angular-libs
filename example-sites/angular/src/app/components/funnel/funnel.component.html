@@ -1,0 +1,26 @@
+<div class="container">
+	<mat-horizontal-stepper [linear]="true" (selectionChange)="onStepperChange($event)">
+		<mat-step>
+			<ng-template matStepLabel>Review</ng-template>
+			<form>
+				<a mat-raised-button [routerLink]="['/products']">Continue Shopping</a>
+			</form>
+		</mat-step>
+		<mat-step evolvRun>
+			<ng-template matStepLabel>Payment</ng-template>
+			<form>
+				<mat-form-field>
+					<input matInput placeholder="Card Number" />
+				</mat-form-field>
+
+				<button mat-raised-button>Verify</button>
+			</form>
+		</mat-step>
+		<mat-step evolvRun>
+			<ng-template matStepLabel>Confirm</ng-template>
+			<form>
+				<button mat-raised-button type="button">Submit Order</button>
+			</form>
+		</mat-step>
+	</mat-horizontal-stepper>
+</div>

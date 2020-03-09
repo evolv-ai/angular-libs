@@ -1,0 +1,16 @@
+{
+	"custom_scripts": [
+		{
+			"id": "1",
+			"script": "console.log('Stage 1 Always-Execute');"
+		}
+	],
+	"triggers": [
+		{
+			"key": "click-link",
+			"kind": "clickEvent",
+			"selector": "button",
+			"predicate": "L2NoZWNrb3V0JC8="
+		}
+	]
+}

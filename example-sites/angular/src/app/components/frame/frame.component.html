@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+	<div class="stack-horizontal">
+		<span>Angular Test Application</span>
+	</div>
+	<div>
+		<span>
+			<button mat-raised-button color="accent"
+			        (click)="openDialog()">
+				Sign up
+			</button>
+		</span>
+		<span>
+			<a mat-button [routerLink]="['/products']" [routerLinkActive]="'mat-accent'">
+				<mat-icon>view_comfy</mat-icon>
+				Products
+			</a>
+		</span>
+		<span>
+			<a mat-button [routerLink]="['/funnel']" [routerLinkActive]="'mat-accent'">
+				<mat-icon>shopping_cart</mat-icon>
+				Checkout
+			</a>
+		</span>
+	</div>
+</mat-toolbar>
+<router-outlet></router-outlet>

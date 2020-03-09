@@ -1,0 +1,21 @@
+:host {
+	::ng-deep mat-toolbar {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.stack-horizontal {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+
+		& > * {
+			flex: 0 0 auto;
+		}
+	}
+
+	div {
+		flex: 0 0 auto;
+	}
+}

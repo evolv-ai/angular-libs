@@ -1,0 +1,9 @@
+<mat-card>
+	<mat-card-content>
+		<img [src]="product.imageUrl" />
+		<dl>
+			<dt class="product-name">{{ product.name }}</dt>
+			<dt class="product-price">{{ product.price | currency }}</dt>
+		</dl>
+	</mat-card-content>
+</mat-card>
