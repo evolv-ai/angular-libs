@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EvolvService } from "execution-plan";
+import { EvolvService } from "@evolv-ai/angular-execution-plan";
 
 
 @Component({

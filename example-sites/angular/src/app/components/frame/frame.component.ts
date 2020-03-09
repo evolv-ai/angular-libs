@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { DialogComponent } from '../dialog/dialog.component';
-import { EvolvService } from "execution-plan";
+import { EvolvService } from "@evolv-ai/angular-execution-plan";
 
 
 @Component({
