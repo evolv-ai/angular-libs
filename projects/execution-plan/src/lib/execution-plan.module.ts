@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import {ExecutionPlanDirective} from "./directives/execution-plan.directive";
+import {AfterViewInitDirective} from "./directives/after-view-init.directive";
 
 
 
 @NgModule({
   declarations: [
-    ExecutionPlanDirective
+    AfterViewInitDirective
   ],
   imports: [
   ],
   exports: [
-    ExecutionPlanDirective
+    AfterViewInitDirective
   ]
 })
 export class ExecutionPlanModule { }
