@@ -1,4 +1,6 @@
-import { AfterViewInit, Directive, Inject } from '@angular/core';
+import { AfterViewInit, Directive } from '@angular/core';
+import {EvolvService} from "../services/evolv.service";
+
 
 @Directive({
   selector: '[evolvRun]'
@@ -6,8 +8,8 @@ import { AfterViewInit, Directive, Inject } from '@angular/core';
 export class EvolvDirective implements AfterViewInit {
   private runtime: Promise<any>;
 
-  constructor(@Inject('evolv') private evolv: any) {
-    this.runtime = this.evolv.runtime;
+  constructor(private evolv: EvolvService) {
+    this.runtime = this.evolv.getRuntime();
   }
 
   async ngAfterViewInit() {

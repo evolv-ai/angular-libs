@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { DialogComponent } from '../dialog/dialog.component';
+import { EvolvService } from "execution-plan";
 
 
 @Component({
@@ -16,14 +17,13 @@ export class FrameComponent implements OnInit {
 		private dialog: MatDialog,
 		private route: ActivatedRoute,
 		private router: Router,
-		@Inject('evolv') private evolv: any
+		private evolv: EvolvService
 	) {
-		const { snapshot } = route;
-		this.runtime = snapshot.data.evolvRuntime;
+		this.runtime = evolv.getRuntime();
 
-		router.events.subscribe((event) => {
+		router.events.subscribe(async (event) => {
 			if (event instanceof ActivationEnd) {
-				this.runtime.rerun();
+        (await this.runtime).rerun();
 			}
 		});
 	}
@@ -35,17 +35,17 @@ export class FrameComponent implements OnInit {
 		});
 
 		dialogRef.afterClosed().subscribe(result => {
-			this.runtime.activate('Main_Page-15211');
+      this.runtime.then((runtime) => runtime.activate('Main_Page-15211'));
 			console.log('The dialog was closed');
 		});
 	}
 
-	ngOnInit() {
+	async ngOnInit() {
 		const handler = async () => {
-			this.runtime.rerun();
-			this.evolv.off('stagecompleted', handler);
+      (await this.runtime).rerun();
+      (await this.evolv.getEvolv()).off('stagecompleted', handler);
 		};
 
-		this.evolv.on('stagecompleted', handler);
+    (await this.evolv.getEvolv()).on('stagecompleted', handler);
 	}
 }

@@ -16,7 +16,7 @@ import { OrderItemComponent } from './components/order-item/order-item.component
 import { FrameComponent } from './components/frame/frame.component';
 import { FunnelComponent } from './components/funnel/funnel.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { EvolvResolver, ExecutionPlanModule } from "execution-plan";
+import { EvolvService, EvolvResolver, ExecutionPlanModule } from "execution-plan";
 
 
 const MaterialModules = [
@@ -53,10 +53,7 @@ const MaterialModules = [
     ExecutionPlanModule
   ],
 	providers: [
-		{
-			provide: 'evolv',
-			useValue: (window as any).evolv
-		},
+    EvolvService,
     EvolvResolver
 	],
 	bootstrap: [AppComponent],

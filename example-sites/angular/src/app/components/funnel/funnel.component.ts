@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { EvolvService } from "execution-plan";
 
 
 @Component({
@@ -10,14 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class FunnelComponent implements OnInit {
 	private runtime: any;
 
-	constructor(private route: ActivatedRoute) {
-		const { snapshot } = route;
-		this.runtime = snapshot.root.children[0].data.evolvRuntime;
+	constructor(evolv: EvolvService) {
+		this.runtime = evolv.getRuntime();
 	}
 
 	ngOnInit() {}
 
-	onStepperChange = (event) => {
-		//this.runtime.rerun();
+	onStepperChange = async (event) => {
+    (await this.runtime).rerun();
 	}
 }

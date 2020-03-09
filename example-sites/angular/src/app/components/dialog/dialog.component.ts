@@ -1,6 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
 	selector: 'app-dialog',
@@ -10,9 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DialogComponent implements OnInit {
 
 	constructor(
-		public dialogRef: MatDialogRef<DialogComponent>,
-		private route: ActivatedRoute,
-		@Inject('evolv') private evolv: any
+		public dialogRef: MatDialogRef<DialogComponent>
 	) {}
 
 	ngOnInit() {}
