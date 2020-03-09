@@ -2,5 +2,46 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1, 
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "execution-plan": {
+      "projectType": "library",
+      "root": "projects/execution-plan",
+      "sourceRoot": "projects/execution-plan/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/execution-plan/tsconfig.lib.json",
+            "project": "projects/execution-plan/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/execution-plan/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/execution-plan/src/test.ts",
+            "tsConfig": "projects/execution-plan/tsconfig.spec.json",
+            "karmaConfig": "projects/execution-plan/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/execution-plan/tsconfig.lib.json",
+              "projects/execution-plan/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "execution-plan"
 }
