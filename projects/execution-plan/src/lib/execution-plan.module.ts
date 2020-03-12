@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {AfterViewInitDirective} from "./directives/after-view-init.directive";
+import {ExecutionPlanService} from "./services/execution-plan.service";
 
 
 
@@ -11,6 +12,9 @@ import {AfterViewInitDirective} from "./directives/after-view-init.directive";
   ],
   exports: [
     AfterViewInitDirective
+  ],
+  providers: [
+    ExecutionPlanService
   ]
 })
 export class ExecutionPlanModule { }

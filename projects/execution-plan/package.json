@@ -2,8 +2,8 @@
   "name": "@evolv-ai/angular-execution-plan",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^9.0.5",
-    "@angular/core": "^9.0.5",
-    "tslib": "^1.10.0"
+    "@angular/common": ">=4.0.0",
+    "@angular/core": ">=4.0.0",
+    "tslib": "=>1.10.0"
   }
 }

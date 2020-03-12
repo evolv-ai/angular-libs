@@ -16,7 +16,7 @@ import { OrderItemComponent } from './components/order-item/order-item.component
 import { FrameComponent } from './components/frame/frame.component';
 import { FunnelComponent } from './components/funnel/funnel.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { ExecutionPlanService, ExecutionPlanResolver, ExecutionPlanModule } from "@evolv-ai/angular-execution-plan";
+import { ExecutionPlanModule, EXECUTION_PLAN_MAX_WAIT } from "@evolv-ai/angular-execution-plan";
 
 
 const MaterialModules = [
@@ -52,10 +52,9 @@ const MaterialModules = [
     ...MaterialModules,
     ExecutionPlanModule
   ],
-	providers: [
-    ExecutionPlanService,
-    ExecutionPlanResolver
-	],
+  providers: [
+    {provide: EXECUTION_PLAN_MAX_WAIT, useValue: 200 }
+  ],
 	bootstrap: [AppComponent],
 	entryComponents: [
 		DialogComponent

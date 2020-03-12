@@ -3,7 +3,7 @@ import {ExecutionPlanService} from "../services/execution-plan.service";
 
 
 @Directive({
-  selector: '[evolv-after-view-init]'
+  selector: '[evolvAfterViewInit]'
 })
 export class AfterViewInitDirective implements AfterViewInit {
   private runtime: Promise<any>;

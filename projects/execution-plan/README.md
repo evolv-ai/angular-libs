@@ -12,13 +12,13 @@ Include in your project by running
 ## Directives
 Evolv provides directives to automatically apply project changes based on Angular lifecycle hooks.
 
-e.g. Include the `AfterViewInitDirective` and mark components with `evolv-after-view-init`
+e.g. Include the `AfterViewInitDirective` and mark components with `evolvAfterViewInit`
 ```
 <mat-horizontal-stepper>
-  <mat-step evolv-after-view-init>
+  <mat-step evolvAfterViewInit>
     <ng-template matStepLabel>Payment</ng-template>
   </mat-step>
-  <mat-step evolv-after-view-init>
+  <mat-step evolvAfterViewInit>
     <ng-template matStepLabel>Confirm</ng-template>
   </mat-step>
 </mat-horizontal-stepper>
@@ -49,6 +49,26 @@ export class ExampleComponent {
 ```
 
 You can also directly access the Evolv instance and call any of the [native functionality](https://media.evolv.ai/releases/latest/docs/index.html)
+
+```
+@Component({
+  selector: 'example',
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.scss']
+})
+export class ExampleComponent {
+  private evolv: any;
+
+  constructor(evolv: ExecutionPlanService) {
+    this.evolv = evolv.getEvolv();
+    (await this.evolv).on()
+  }
+
+  manualRun = async (event) => {
+    (await this.runtime).on('stagecompleted', () => console.log('stagecompleted'));
+  }
+}
+```
 
 You can find an example site implementing these features [here](../../example-sites/angular) 
 

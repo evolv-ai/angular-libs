@@ -6,7 +6,6 @@ import { FunnelComponent } from './components/funnel/funnel.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { FrameComponent } from './components/frame/frame.component';
 import { ProductsResolver } from './services';
-import { ExecutionPlanResolver } from '@evolv-ai/angular-execution-plan';
 
 const routes: Routes = [
 	{
@@ -33,10 +32,7 @@ const routes: Routes = [
 				redirectTo: '/products',
 				pathMatch: 'full'
 			}
-		],
-		resolve: {
-			evolvRuntime: ExecutionPlanResolver
-		}
+		]
 	}
 ];
 
