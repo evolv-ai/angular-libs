@@ -1,6 +1,8 @@
 {
-  "name": "@evolv-ai/angular-libs",
-  "version": "0.0.0",
+  "name": "@evolv/angular-libs",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/evolv-ai/angular-libs",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

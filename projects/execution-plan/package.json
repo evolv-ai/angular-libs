@@ -1,6 +1,7 @@
 {
-  "name": "@evolv-ai/angular-execution-plan",
+  "name": "@evolv/angular-execution-plan",
   "version": "0.0.1",
+  "repository": "https://github.com/evolv-ai/angular-libs/tree/master/projects/execution-plan",
   "peerDependencies": {
     "@angular/common": ">=4.0.0",
     "@angular/core": ">=4.0.0",

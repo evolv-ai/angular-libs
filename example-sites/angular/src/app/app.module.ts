@@ -16,34 +16,34 @@ import { OrderItemComponent } from './components/order-item/order-item.component
 import { FrameComponent } from './components/frame/frame.component';
 import { FunnelComponent } from './components/funnel/funnel.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { ExecutionPlanModule, EXECUTION_PLAN_MAX_WAIT } from "@evolv-ai/angular-execution-plan";
+import { ExecutionPlanModule, EXECUTION_PLAN_MAX_WAIT } from '@evolv/angular-execution-plan';
 
 
 const MaterialModules = [
-	MatButtonModule,
-	MatCardModule,
-	MatDialogModule,
-	MatGridListModule,
-	MatIconModule,
-	MatInputModule,
-	MatListModule,
-	MatStepperModule,
-	MatSidenavModule,
-	MatTabsModule,
-	MatToolbarModule
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatStepperModule,
+  MatSidenavModule,
+  MatTabsModule,
+  MatToolbarModule
 ];
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		CheckoutComponent,
-		DialogComponent,
-		ProductListComponent,
-		ProductTileComponent,
-		OrderItemComponent,
-		FrameComponent,
-		FunnelComponent
-	],
+  declarations: [
+    AppComponent,
+    CheckoutComponent,
+    DialogComponent,
+    ProductListComponent,
+    ProductTileComponent,
+    OrderItemComponent,
+    FrameComponent,
+    FunnelComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -55,9 +55,9 @@ const MaterialModules = [
   providers: [
     {provide: EXECUTION_PLAN_MAX_WAIT, useValue: 200 }
   ],
-	bootstrap: [AppComponent],
-	entryComponents: [
-		DialogComponent
-	]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogComponent
+  ]
 })
 export class AppModule { }
