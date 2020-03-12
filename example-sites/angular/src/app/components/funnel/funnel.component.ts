@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ExecutionPlanService } from "@evolv-ai/angular-execution-plan";
+import { ExecutionPlanService } from '@evolv/angular-execution-plan';
 
 
 @Component({
-	selector: 'app-funnel',
-	templateUrl: './funnel.component.html',
-	styleUrls: ['./funnel.component.scss']
+  selector: 'app-funnel',
+  templateUrl: './funnel.component.html',
+  styleUrls: ['./funnel.component.scss']
 })
 export class FunnelComponent implements OnInit {
-	private runtime: any;
+  private runtime: any;
 
-	constructor(evolv: ExecutionPlanService) {
-		this.runtime = evolv.getRuntime();
-	}
+  constructor(evolv: ExecutionPlanService) {
+    this.runtime = evolv.getRuntime();
+  }
 
-	ngOnInit() {}
+  ngOnInit() {}
 
-	onStepperChange = async (event) => {
+  onStepperChange = async (event) => {
     (await this.runtime).rerun();
-	}
+  }
 }

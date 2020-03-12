@@ -7,7 +7,7 @@ This library gives extra control over Evolv's functionality on the page.
 ## Importing the Library
 Include in your project by running
 
-`npm install @evolv-ai/angular-execution-plan`
+`npm install @evolv/angular-execution-plan`
 
 ## Directives
 Evolv provides directives to automatically apply project changes based on Angular lifecycle hooks.
