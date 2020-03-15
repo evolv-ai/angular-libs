@@ -70,7 +70,7 @@ export class ExampleComponent {
 }
 ```
 
-You can find an example site implementing these features [here](../../example-sites/angular) 
+You can find an example site implementing these features [here](../../example-sites/angular7) 
 
 ## Development
 ### Code scaffolding
