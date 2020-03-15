@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive } from '@angular/core';
-import {ExecutionPlanService} from "../services/execution-plan.service";
+import {ExecutionPlanService} from '../services/execution-plan.service';
 
 
 @Directive({
