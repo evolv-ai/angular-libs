@@ -1,11 +1,8 @@
 import {Inject, Injectable, InjectionToken, Optional} from '@angular/core';
-import {timer} from 'rxjs';
 
 export const EXECUTION_PLAN_MAX_WAIT = new InjectionToken<string>('executionPlanMaxWait');
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ExecutionPlanService {
   constructor(@Inject(EXECUTION_PLAN_MAX_WAIT) @Optional() public maxWait?: number) {
     this.maxWait = maxWait || 100;
@@ -15,19 +12,27 @@ export class ExecutionPlanService {
     return (window as any).evolv;
   }
 
+  private deferredRetrieval(resolve, reject, startTime: number) {
+    setTimeout( () => {
+      const evolv = this._extractEvolvFromWindow();
+      if (evolv) {
+        resolve(evolv);
+      } else if (Date.now() - startTime < this.maxWait) {
+        this.deferredRetrieval(resolve, reject, startTime);
+      } else {
+        reject(`Evolv not found within ${this.maxWait}ms`);
+      }
+    }, 10);
+  }
+
   public getEvolv(): Promise<any> {
-    const startTime = Date.now();
     return new Promise((resolve, reject) => {
-      const subscription = timer(0, 10).subscribe((t) => {
-        const evolv = this._extractEvolvFromWindow();
-        if (evolv) {
-          subscription.unsubscribe();
-          resolve(evolv);
-        } else if (Date.now() - startTime > this.maxWait) {
-          subscription.unsubscribe();
-          reject(`Evolv not found within ${this.maxWait}ms`);
-        }
-      });
+      const evolv = this._extractEvolvFromWindow();
+      if (evolv) {
+        resolve(evolv);
+      } else {
+        this.deferredRetrieval(resolve, reject, Date.now());
+      }
     });
   }
 
