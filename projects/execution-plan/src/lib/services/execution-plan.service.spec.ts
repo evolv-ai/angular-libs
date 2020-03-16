@@ -8,7 +8,7 @@ describe('ExecutionPlanService', () => {
   const waitTime = 5000;
 
   beforeEach(() => {
-    window.['evolv'] = undefined;
+    window['evolv'] = undefined;
     TestBed.configureTestingModule({
       providers: [{ provide: EXECUTION_PLAN_MAX_WAIT, useValue: waitTime }]
     });

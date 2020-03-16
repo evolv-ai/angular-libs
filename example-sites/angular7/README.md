@@ -1,3 +1,9 @@
+# Require Evolv version
+
+Angular 7 and below requires version 0.0.2
+
+`npm install @evolv/angular-execution-plan@0.0.2`
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.

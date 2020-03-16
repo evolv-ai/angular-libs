@@ -48,6 +48,23 @@ export class ExampleComponent {
 }
 ```
 
+To configure how long you are willing to wait for Evolv to be present on the page, provide a custom value for the timeout
+
+```
+@NgModule({
+  declarations: [
+    AppComponent, ...
+  ],
+  imports: [
+    ExecutionPlanModule, ...
+  ],
+  providers: [
+    {provide: EXECUTION_PLAN_MAX_WAIT, useValue: 200 }
+  ],
+  ...
+})
+```
+
 You can also directly access the Evolv instance and call any of the [native functionality](https://media.evolv.ai/releases/latest/docs/index.html)
 
 ```

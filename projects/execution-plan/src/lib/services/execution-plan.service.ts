@@ -2,7 +2,9 @@ import {Inject, Injectable, InjectionToken, Optional} from '@angular/core';
 
 export const EXECUTION_PLAN_MAX_WAIT = new InjectionToken<string>('executionPlanMaxWait');
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ExecutionPlanService {
   constructor(@Inject(EXECUTION_PLAN_MAX_WAIT) @Optional() public maxWait?: number) {
     this.maxWait = maxWait || 100;
