@@ -1,14 +1,14 @@
-import {TestBed, tick} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { fakeSchedulers } from 'rxjs-marbles/jasmine/angular';
 
 import {EXECUTION_PLAN_MAX_WAIT, ExecutionPlanService} from './execution-plan.service';
 
 describe('ExecutionPlanService', () => {
   let service: ExecutionPlanService;
-  let waitTime = 5000;
+  const waitTime = 5000;
 
   beforeEach(() => {
-    window['evolv'] = undefined;
+    window.['evolv'] = undefined;
     TestBed.configureTestingModule({
       providers: [{ provide: EXECUTION_PLAN_MAX_WAIT, useValue: waitTime }]
     });
@@ -23,50 +23,50 @@ describe('ExecutionPlanService', () => {
     window['evolv'] = {};
     service.getEvolv()
       .then((result) => {
-        expect(true).toBe(true)
+        expect(true).toBe(true);
       })
       .catch(() => {
-        expect(true).toBe(false)
+        expect(true).toBe(false);
       });
 
     advance(0);
   }));
 
   it('should pass as evolv is set in time', fakeSchedulers(advance => {
-    let _currdate = 0;
-    spyOn(Date, 'now').and.callFake(function() {
-      return _currdate;
+    let currdate = 0;
+    spyOn(Date, 'now').and.callFake(() => {
+      return currdate;
     });
     service.getEvolv()
       .then((result) => {
-        expect(true).toBe(true)
+        expect(true).toBe(true);
       })
       .catch(() => {
-        expect(true).toBe(false)
+        expect(true).toBe(false);
       });
 
-    _currdate = waitTime - 100;
-    advance(_currdate);
+    currdate = waitTime - 100;
+    advance(currdate);
     window['evolv'] = {};
-    _currdate = waitTime - 50;
-    advance(_currdate);
+    currdate = waitTime - 50;
+    advance(currdate);
   }));
 
   it('should fail as evolv is set too late', fakeSchedulers(advance => {
-    let _currdate = 0;
-    spyOn(Date, 'now').and.callFake(function() {
-      return _currdate;
+    let currdate = 0;
+    spyOn(Date, 'now').and.callFake(() => {
+      return currdate;
     });
     service.getEvolv()
       .then((result) => {
-        expect(true).toBe(false)
+        expect(true).toBe(false);
       })
       .catch(() => {
-        expect(true).toBe(true)
+        expect(true).toBe(true);
       });
 
-    _currdate = waitTime + 100;
-    advance(_currdate);
+    currdate = waitTime + 100;
+    advance(currdate);
     window['evolv'] = {};
   }));
 });
